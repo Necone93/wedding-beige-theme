@@ -35,11 +35,12 @@ body {
 }
 .pozivnica-tekst p {
         font-size: 2rem; /* ili manje ako treba */
-  max-width: 90%;
+  max-width: 100%;
   word-wrap: break-word;
   font-family: "Alex Brush", cursive;
   font-weight: 400;
   font-style: normal;
+  text-align: center;
 }
 .strelica-tekst {
   width: 100%;
