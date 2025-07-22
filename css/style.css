@@ -189,3 +189,10 @@ h1, h2, h3 {
     visibility: hidden;
   }
 }
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll; /* ili initial */
+    background-size: cover; /* ili contain ako želiš da se vidi cela slika */
+    background-position: center top;
+  }
+}
