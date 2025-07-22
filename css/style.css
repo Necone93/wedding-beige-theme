@@ -192,8 +192,8 @@ h1, h2, h3 {
 }
 @media (max-width: 768px) {
   body {
-    background-attachment: scroll; /* ili initial */
-    background-size: cover; /* ili contain ako želiš da se vidi cela slika */
+    background-attachment: scroll; 
+    background-size: contain; 
     background-position: center top;
   }
 }
