@@ -1,0 +1,188 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-image: url("/assets/bckg.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+#par {
+    max-width: 360px;
+    width: auto;
+    height: auto;
+}
+#pozivnica {
+  height: 100vh;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.pozivnica-tekst {
+      width: 100%; /* da ide od ivice do ivice rama */
+  background-color: rgba(255, 255, 255, 0.7); /* bela sa prozirnošću */
+
+  font-size: 1rem;
+  color: #333;
+  word-wrap: break-word;
+}
+.pozivnica-tekst p {
+        font-size: 2rem; /* ili manje ako treba */
+  max-width: 90%;
+  word-wrap: break-word;
+  font-family: "Alex Brush", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.strelica-tekst {
+  width: 100%;
+}
+.strelica {
+  width: 80%;
+}
+form {
+  max-width: 500px;
+  margin: 2rem auto;
+  background-color: rgba(255, 255, 255, 0.8); /* providno bela */
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+}
+form label {
+    font-family: 'Cormorant';
+}
+.form-control-line {
+  width: 50%;
+  border: none;
+  border-bottom: 2px solid black; /* braon linija */
+  background: transparent;
+  padding: 5px;
+  outline: none;
+  font-size: 1rem;
+}
+.form-control-line:focus {
+  border-color: #a4835b;
+}
+.btn-forma {
+    background-color: #d2b48c; /* bež-braon */
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+.footer {
+  background-color: black;
+  color: white;
+  width: 100%;
+}
+.footer p {
+  margin: 0;
+}
+h1, h2, h3 {
+  font-family: 'Cormorant';
+}
+.poruka {
+  font-family: 'Alex Brush';
+  font-size: 2.5rem;
+}
+.ime-para {
+  text-shadow: 5px 5px 8px black;
+  font-family: 'Playfair Display';
+  font-size: 3rem;
+}
+.datum {
+  font-family: 'Cormorant';
+  font-size: 1.5rem;
+}
+#timer {
+  font-family: 'Cormorant';
+  font-size: 2rem;
+}
+.cormorant {
+  font-family: 'Cormorant';
+}
+.h1-organizacija {
+  font-family: 'Playfair Display';
+}
+.h1-organizacija::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background-color: green; /* bež-braon */
+  width: 60%;
+  margin: 0.5rem auto;
+}
+
+/* Animacija pozadine */
+.heart-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.9); /* providna bela pozadina */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeOut 2s ease-in-out 3s forwards;
+}
+
+/* Oblik srca */
+.heart {
+  width: 100px;
+  height: 90px;
+  background: red;
+  position: relative;
+  transform: rotate(-45deg);
+  animation: pulse 1s infinite;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  width: 100px;
+  height: 90px;
+  background: red;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.heart::before {
+  top: -50px;
+  left: 0;
+}
+
+.heart::after {
+  left: 50px;
+  top: 0;
+}
+
+/* Pulsiranje */
+@keyframes pulse {
+  0% {
+    transform: rotate(-45deg) scale(1);
+  }
+  50% {
+    transform: rotate(-45deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(-45deg) scale(1);
+  }
+}
+
+/* Nestajanje cele animacije */
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
