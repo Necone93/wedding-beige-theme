@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 body {
-    background-image: url("/assets/bckg.png");
+    background-image: url("../assets/bckg.png");
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
