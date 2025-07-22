@@ -193,7 +193,8 @@ h1, h2, h3 {
 @media (max-width: 768px) {
   body {
     background-attachment: scroll; 
-    background-size: contain; 
+    background-size: contain;
+    background-repeat: repeat; 
     background-position: center top;
   }
 }
