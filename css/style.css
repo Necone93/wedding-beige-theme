@@ -2,14 +2,20 @@
     box-sizing: border-box;
 }
 body {
-    background-image: url("../assets/bckg.png");
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center;
+  background-color: rgb(255, 213, 135);
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+}
+.flowers {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100%; /* prilagodi visinu po potrebi */
+  object-fit: contain;
+  z-index: -1; /* da bude iza svega */
+  pointer-events: none; /* da se ne klikće */
+  opacity: 0.5;
 }
 #par {
     max-width: 360px;
@@ -41,6 +47,9 @@ body {
   font-weight: 400;
   font-style: normal;
   text-align: center;
+}
+.org-box {
+  background-color: rgba(0, 128, 0, 0.278);
 }
 .strelica-tekst {
   width: 100%;
@@ -102,9 +111,10 @@ h1, h2, h3 {
   font-size: 2.5rem;
 }
 .ime-para {
-  text-shadow: 5px 5px 8px black;
+  text-shadow: 2px 2px 2px black;
   font-family: 'Playfair Display';
   font-size: 3rem;
+  color: green;
 }
 .datum {
   font-family: 'Cormorant';
@@ -189,13 +199,5 @@ h1, h2, h3 {
   to {
     opacity: 0;
     visibility: hidden;
-  }
-}
-@media (max-width: 768px) {
-  body {
-    background-attachment: scroll; 
-    background-size: contain;
-    background-repeat: repeat; 
-    background-position: center top;
   }
 }
