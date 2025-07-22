@@ -59,6 +59,7 @@ form {
 }
 form label {
     font-family: 'Cormorant';
+    font-size: 1.5rem;
 }
 form textarea {
   width: 50%;
