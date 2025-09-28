@@ -1,0 +1,44 @@
+{
+  "imePara": "Jovana <br> & <br> Marko",
+  "slikaPara": "assets/par.png",
+
+  "pozivnicaTekst": "Dragi prijatelji i porodico,<br>S velikom radošću i ljubavlju vas pozivamo<br>da budete deo najvažnijeg dana u našem životu.",
+
+  "organizacijaDatum": "Subota, 13. septembar",
+  "organizacijaOkupljanje": "Okupljanje u 12:30",
+
+  "lokacije": [
+    {
+      "naslov": "Crkveno venčanje",
+      "mesto": "Crkva Svetog Marka",
+      "adresa": "Bulevar Kralja Aleksandra 17",
+      "vreme": "u 13 časova"
+    },
+    {
+      "naslov": "Opštinsko venčanje",
+      "mesto": "Gradska opština Stari grad",
+      "adresa": "Makedonska 42",
+      "vreme": "u 15 časova"
+    },
+    {
+      "naslov": "Proslava",
+      "mesto": "Sala za venčanja \"Love\"",
+      "adresa": "Zrenjaninski put 82",
+      "vreme": "u 17 časova"
+    }
+  ],
+
+  "rsvpRok": "Molimo da Vaš dolazak potvrdite do 13. avgusta",
+  "rsvpEmail": "primergmail@gmail.com",
+
+  "countdown": {
+    "title": "RADUJEMO SE NAŠEM SUSRETU!",
+    "targetISO": "2026-03-03T13:00:00+02:00",
+    "labels": {
+      "days":   { "one": "Dan",     "many": "Dana" },
+      "hours":  { "one": "Sat",     "many": "Sati" },
+      "minutes":{ "one": "Minut",   "many": "Minuta" },
+      "seconds":{ "one": "Sekunda", "many": "Sekundi" }
+    }
+  }
+}

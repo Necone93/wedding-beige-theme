@@ -1,106 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pozivnica</title>
-    <link rel="stylesheet" href="css/style.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Baloo+Da+2:wght@400..800&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pozivnica - green</title>
 
+  <!-- Tvoj CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+        crossorigin="anonymous">
+
+  <!-- Fontovi -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Baloo+Da+2:wght@400..800&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="container py-5">
-  <div class="row align-items-center">
-    <!-- Tekstualni deo -->
-    <div class="col-12 col-md-8 text-md-start d-flex flex-column align-items-center text-center">
-      <h2 class="poruka text-center">Naš dan, ali i vaš, <br> - jer ste deo naše priče</h2>
-      <h1 class="ime-para text-center fw-bold">Ana <br> & <br> Marko</h1>
-      <p class="mt-3 datum fw-bold">13. septembar 2025</p>
-      <p class="fs-4" id="timer">00 : 00 : 00 : 00</p>
-    </div>
-    
-    <!-- Slika -->
-    <div class="col-12 col-md-4 text-center">
-      <img id="par" src="assets/par.png" class="img-fluid rounded shadow" />
-    </div>
-  </div>
-  <img src="assets/flowers.png" class="flowers" alt="">
-</div>
-<div id="pozivnica" class="d-flex flex-column justify-content-center align-items-center">
-  <img src="assets/frame-top.png" alt="" class="frame img-fluid">
-    <div class="pozivnica-tekst text-center">
-    <p>
-      Dragi prijatelji i porodico,<br>
-      S velikom radošću i ljubavlju vas pozivamo<br>
-      da budete deo najvažnijeg dana u našem životu.
-    </p>
-  </div>
-  <img src="assets/frame-bottom.png" alt="" class="frame img-fluid">
-  </div>
 
   <div class="container py-5">
     <div class="row align-items-center">
+      <!-- LEVA STRANA: okrugla slika + ime para (puni se iz data.json) -->
+      <div class="col-12 col-md-8 d-flex justify-content-center justify-content-md-start">
+        <div class="okrugla-slika">
+          <img src="assets/frame.png" alt="Dekorativni ram">
+          <h1 class="fw-bold imepara py-5" id="ime-para"></h1>
+        </div>
+      </div>
+
+      <!-- DESNA STRANA: slika para -->
+      <div class="col-12 col-md-4 text-center">
+        <figure class="photo-card ring">
+  <img class="photo-green-soft" id="par" src="assets/par.png" alt="Par">
+</figure>
+      </div>
+    </div>
+    <img src="assets/flowers.png" class="flowers" alt="">
+  </div>
+
+  <div id="pozivnica" class="d-flex flex-column justify-content-center align-items-center">
+    <img src="assets/frame-top.png" alt="" class="frame img-fluid">
+    <div class="pozivnica-tekst text-center">
+      <p>
+        Dragi prijatelji i porodico,<br>
+        S velikom radošću i ljubavlju vas pozivamo<br>
+        da budete deo najvažnijeg dana u našem životu.
+      </p>
+    </div>
+    <img src="assets/frame-bottom.png" alt="" class="frame img-fluid">
+  </div>
+
+  <div class="container py-5"><!-- ORGANIZACIJA -->
+    <div class="row align-items-center">
       <div class="col-12 text-center">
-    <h1 class="h1-organizacija fw-bold">Organizacija</h1>
-    <p class="cormorant fs-4 fw-bold">Subota, 13. septembar</p>
-    <p class="cormorant fs-5 fw-bold">Okupljanje u 12:30</p>
+        <h1 class="h1-organizacija fw-bold">Organizacija</h1>
+        <p class="cormorant fs-4 fw-bold">Subota, 13. septembar</p>
+        <p class="cormorant fs-5 fw-bold">Okupljanje u 12:30</p>
       </div>
     </div>
-      <div class="row align-items-center">
-    <div class="col-12 col-xl-4 org-box mt-5">
-      <h2 class="fw-bold">Crkveno venčanje</h2>
-      <p class="cormorant">Crkva Svetog Marka</p>
-      <p class="cormorant">Bulevar Kralja Aleksandra 17</p>
+
+    <!-- Countdown će JS ubaciti ovde -->
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 align-items-stretch text-center">
+  <div class="col">
+    <div class="box py-3 h-100">
+      <img src="/assets/crkveno.png" alt="Crkveno venčanje" class="org-ikonica">
+      <h1 style="font-family: Great Vibes;">Crkveno venčanje</h1>
+      <h3 style="font-family: Playfair Display;">Crkva Svetog Marka</h3>
+      <p>Bulevar Kralja Aleksandra 37</p>
       <p class="text-end fw-bold">&#8594; u 13 časova</p>
-      <div class="ratio ratio-16x9">      
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.544918917413!2d20.466314775722296!3d44.81046227681992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a7aa501a8a9f3%3A0xc6a381731628cb98!2sSt.%20Mark%20Orthodox%20Church!5e0!3m2!1sen!2srs!4v1752933087950!5m2!1sen!2srs" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
+      <!-- umesto iframa: lep link na mapu -->
+      <p class="map-link-wrapper text-end mb-0">
+        <a
+          class="map-link"
+          href="https://www.google.com/maps/search/?api=1&query=Crkva%20Svetog%20Marka%20Bulevar%20Kralja%20Aleksandra%2037"
+          target="_blank" rel="noopener"
+        >Pogledaj na mapi</a>
+      </p>
     </div>
-    <div class="col-12 col-xl-4 org-box mt-5">
-      <h2 class="fw-bold">Opštinsko venčanje</h2>
-      <p class="cormorant">Gradska opština Stari grad</p>
-      <p class="cormorant">Makedonska 42</p>
+  </div>
+
+  <div class="col">
+    <div class="box py-3 h-100">
+      <img src="/assets/gradjansko.png" alt="Opštinsko venčanje" class="org-ikonica">
+      <h1 style="font-family: Great Vibes;">Opštinsko venčanje</h1>
+      <h3 style="font-family: Playfair Display;">Sala za venčanja</h3>
+      <p>Adresa sale za venčanja</p>
       <p class="text-end fw-bold">&#8594; u 15 časova</p>
-      <div class="ratio ratio-16x9">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.3083255731317!2d20.46235867572262!3d44.81528297650185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a7ab1b1c4a08b%3A0x2cad58383c76d5fa!2sMakedonska%2042%2C%20Beograd!5e0!3m2!1sen!2srs!4v1752933744286!5m2!1sen!2srs" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
+      <p class="map-link-wrapper text-end mb-0">
+        <a
+          class="map-link"
+          href="https://www.google.com/maps/search/?api=1&query=Sala%20za%20ven%C4%8Danja%20Makedonska%2042"
+          target="_blank" rel="noopener"
+        >Pogledaj na mapi</a>
+      </p>
     </div>
-    <div class="col-12 col-xl-4 pz-5 org-box mt-5">
-      <h2 class="fw-bold">Proslava</h2>
-      <p class="cormorant">Sala za venčanja "Love"</p>
-      <p class="cormorant">Zrenjaninski put 82</p>
+  </div>
+
+  <div class="col">
+    <div class="box py-3 h-100">
+      <img src="/assets/proslava.png" alt="Proslava" class="org-ikonica">
+      <h1 style="font-family: Great Vibes;">Proslava</h1>
+      <h3 style="font-family: Playfair Display;">Sala za venčanja</h3>
+      <p>Adresa sale za venčanja</p>
       <p class="text-end fw-bold">&#8594; u 17 časova</p>
-      <div class="ratio ratio-16x9">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11313.569959227985!2d20.4702585871582!3d44.854304000000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a7b34dbb65a1d%3A0x7fcba33f1048e140!2sExclusive%20Holl!5e0!3m2!1sen!2srs!4v1752934689052!5m2!1sen!2srs" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
+      <p class="map-link-wrapper text-end mb-0">
+        <a
+          class="map-link"
+          href="https://www.google.com/maps/search/?api=1&query=Sala%20za%20ven%C4%8Danja%20Zrenjaninski%20put%2082"
+          target="_blank" rel="noopener"
+        >Pogledaj na mapi</a>
+      </p>
     </div>
   </div>
+</div>
+
   </div>
+
   <div class="forma align-items-center">
-    <h3 class="text-center">Molimo da Vaš dolazak potvrdite do 13.avgusta</h3>
+    <h3 class="cormorant text-center">Molimo da Vaš dolazak potvrdite do 3.februara</h3>
     <div class="mb-3">
-      <form>
+      <form id="rsvp-form">
         <div class="mb-3">
           <label class="form-label">Ime i prezime</label><br>
-          <input type="text" class="input-name form-control-line">
+          <input type="text" class="input-name form-control-line" name="ime">
         </div>
         <div class="mb-3">
-          <input type="radio" name="dolazak" id="da">
+          <input type="radio" name="dolazak" id="da" value="Dolazim">
           <label for="da">Dolazim</label><br>
-          <input type="radio" name="dolazak" id="ne">
-          <label for="">Ne dolazim</label>
+          <input type="radio" name="dolazak" id="ne" value="Ne dolazim">
+          <label for="ne">Ne dolazim</label>
         </div>
         <div class="mb-3">
-          <label for="">Unesite broj gostiju koji dolaze sa vama</label><br>
-          <input type="number">
+          <label>Unesite broj gostiju koji dolaze sa vama</label><br>
+          <input type="number" name="brojgostiju" min="0">
         </div>
         <div class="mb-3">
-          <label for="">Dodatni komentar</label><br>
-          <textarea name="" id=""></textarea>
+          <label>Dodatni komentar</label><br>
+          <textarea name="komentar" rows="3"></textarea>
         </div>
         <button class="btn-forma">Potvrdi</button>
       </form>
@@ -108,13 +148,17 @@
   </div>
 
   <div class="footer text-center">
-        <p>&copy; TvojaPozivnica.rs</p>
+    <p>&copy; TvojaPozivnica.rs</p>
   </div>
-<div class="heart-overlay">
-  <div class="heart"></div>
-</div>
 
+  <div class="heart-overlay">
+    <div class="heart"></div>
+  </div>
+
+  <!-- Tvoj JS -->
   <script src="js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+          crossorigin="anonymous"></script>
 </body>
 </html>

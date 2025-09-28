@@ -1,12 +1,80 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 body {
   background-color: rgb(255, 213, 135);
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
+
+
+/* OKRUGLI RAM – ostavi kako jeste, samo malo jača vidljivost rama */
+.okrugla-slika{
+  max-width: 460px;
+  position: relative;
+  margin: 0 auto;
+}
+.okrugla-slika img{
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  opacity: 0.75; /* bilo 0.6 – malo jači ram radi kontrasta */
+}
+
+/* IME PARA – vizuelno centrirano u PNG ramu */
+.imepara{
+  /* fino podešavanje optičkog centra za konkretan frame.png */
+  --nudge-x: 8px;    /* + udesno / - ulevo */
+  --nudge-y: -6px;   /* + nadole / - nagore */
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translate(var(--nudge-x), var(--nudge-y));
+  padding: 0 !important; /* neutralizuje py-5 iz HTML-a */
+
+  text-align: center;
+  font-family: 'Great Vibes', cursive;
+  color: #2f6d41;  /* zelena */
+  line-height: 1.05;
+  font-weight: 400 !important;
+  white-space: normal;
+  text-transform: none !important;
+  font-variant-caps: normal;
+  font-size: 4rem;
+  /* veoma suptilna aura da tekst "legne" na ram */
+  text-shadow:
+    0 1px 0 rgba(255,255,255,0.45),
+    0 0 6px rgba(255,255,255,0.25);
+}
+
+/* svako ime u posebnom redu */
+.imepara .name{
+  display: block;
+  font-size: clamp(2.2rem, 6.2vw, 3.8rem);
+  letter-spacing: .3px;
+
+}
+
+/* ampersand – manji, blago spušten i ton zelene malo svetliji */
+.imepara .amp{
+  display: block;
+  font-size: .62em;
+  line-height: .7;
+  margin: .05em 0 .1em;
+  color: #3b7e4e;             /* svetlija zelena nijansa */
+  font-weight: 500;
+  transform: translateY(2px); /* malko niže da deluje skladnije */
+}
+
+/* po želji, dodatni mikro-nudge za mobilne (frame se drugačije renderuje) */
+@media (max-width: 576px){
+  .imepara{ --nudge-x: 6px; --nudge-y: -4px; }
+}
+
+
 .flowers {
   position: fixed;
   right: 0;
@@ -17,11 +85,26 @@ body {
   pointer-events: none; /* da se ne klikće */
   opacity: 0.5;
 }
-#par {
-    max-width: 360px;
-    width: auto;
-    height: auto;
+
+/* BASE: slika para ostaje responsivna */
+/* baza – ostavi responsivno i nenapadno */
+#par{ display:block; width:100%; max-width:360px; height:auto; }
+
+/* soft sage */
+.photo-green-soft{
+  border-radius:18px;
+  outline:3px solid rgba(47,109,65,.16);   /* #2f6d41 sa prozirnošću */
+  outline-offset:8px;
+  box-shadow: 0 12px 28px rgba(0,0,0,.14);
+  filter: saturate(1.04) contrast(1.03) hue-rotate(-4deg);
+  transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
 }
+.photo-green-soft:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 18px 36px rgba(0,0,0,.18);
+}
+
+
 #pozivnica {
   height: 100vh;
   width: 100%;
@@ -32,31 +115,73 @@ body {
 }
 
 .pozivnica-tekst {
-      width: 100%; /* da ide od ivice do ivice rama */
+  width: 100%; /* da ide od ivice do ivice rama */
   background-color: rgba(255, 255, 255, 0.7); /* bela sa prozirnošću */
-
   font-size: 1rem;
   color: #333;
   word-wrap: break-word;
 }
 .pozivnica-tekst p {
-        font-size: 2rem; /* ili manje ako treba */
+  font-size: 2rem; /* ili manje ako treba */
   max-width: 100%;
   word-wrap: break-word;
-  font-family: "Alex Brush", cursive;
+  font-family: "Great Vibes", cursive;
   font-weight: 400;
   font-style: normal;
   text-align: center;
 }
-.org-box {
-  background-color: rgba(0, 128, 0, 0.278);
+
+/* ZELENI stil box-a (isti layout kao rustik, samo druga paleta) */
+.box{
+  background: rgba(47, 109, 65, .08);  /* suptilno zelenkasto staklo */
+  border-radius: 10px;
+  color: #2f6d41;                      /* tamno-zelena za tekst */
+  backdrop-filter: blur(2px);
 }
+
+/* Ikonica responsivna i ujednačena */
+.org-ikonica{
+  display:block;
+  width: clamp(48px, 14vw, 88px);      /* min 48px, max ~88px, responsivno */
+  height:auto;
+  object-fit:contain;
+  margin: 0 auto .5rem auto;           /* centrirana, malo prostora ispod */
+}
+
+/* Link "Pogledaj na mapi" - da ne izgleda kao običan link */
+.map-link{
+  font-family: 'Playfair Display', serif;  /* kao h3 */
+  font-weight: 600;
+  font-size: 1rem;                         /* u ravni sa ostalim tekstom */
+  color: #2f6d41;                          /* zelena */
+  text-decoration: none;
+  border-bottom: 1px solid rgba(47,109,65,.4); /* diskretna linija */
+  padding-bottom: 2px;
+  transition: color .2s ease, border-color .2s ease, opacity .2s;
+}
+.map-link:hover{
+  color: #265736;
+  border-color: currentColor;
+  opacity: .9;
+}
+
+/* Ako želiš malo kompaktniji razmak ispod sata/vremena i linka */
+.map-link-wrapper{
+  margin-top: .25rem;
+}
+
+/* (opciono) h1/h3 u boxu da vuku istu zelenu */
+.box h1,
+.box h3,
+.box p{ color: #2f6d41; }
+
 .strelica-tekst {
   width: 100%;
 }
 .strelica {
   width: 80%;
 }
+
 form {
   max-width: 500px;
   margin: 2rem auto;
@@ -64,11 +189,10 @@ form {
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
-
 }
 form label {
-    font-family: 'Cormorant';
-    font-size: 1.5rem;
+  font-family: 'Playfair Display';
+  font-size: 1rem;
 }
 form textarea {
   width: 50%;
@@ -86,7 +210,7 @@ form textarea {
   border-color: #a4835b;
 }
 .btn-forma {
-    background-color: #d2b48c; /* bež-braon */
+  background-color: #2f6d41; /* bež-braon */
   color: white;
   padding: 0.5rem 1.5rem;
   border: none;
@@ -95,6 +219,7 @@ form textarea {
   font-weight: bold;
   transition: background-color 0.3s ease;
 }
+
 .footer {
   background-color: black;
   color: white;
@@ -103,19 +228,13 @@ form textarea {
 .footer p {
   margin: 0;
 }
-h1, h2, h3 {
-  font-family: 'Cormorant';
-}
+
+
 .poruka {
   font-family: 'Alex Brush';
   font-size: 2.5rem;
 }
-.ime-para {
-  text-shadow: 2px 2px 2px black;
-  font-family: 'Playfair Display';
-  font-size: 3rem;
-  color: green;
-}
+
 .datum {
   font-family: 'Cormorant';
   font-size: 1.5rem;
@@ -125,10 +244,10 @@ h1, h2, h3 {
   font-size: 2rem;
 }
 .cormorant {
-  font-family: 'Cormorant';
+  font-family: 'Playfair Display';
 }
 .h1-organizacija {
-  font-family: 'Playfair Display';
+  font-family: 'Great Vibes';
 }
 .h1-organizacija::after {
   content: "";
@@ -160,7 +279,6 @@ h1, h2, h3 {
   transform: rotate(-45deg);
   animation: pulse 1s infinite;
 }
-
 .heart::before,
 .heart::after {
   content: "";
@@ -170,34 +288,16 @@ h1, h2, h3 {
   border-radius: 50%;
   position: absolute;
 }
-
-.heart::before {
-  top: -50px;
-  left: 0;
-}
-
-.heart::after {
-  left: 50px;
-  top: 0;
-}
+.heart::before { top: -50px; left: 0; }
+.heart::after  { left: 50px; top: 0; }
 
 /* Pulsiranje */
 @keyframes pulse {
-  0% {
-    transform: rotate(-45deg) scale(1);
-  }
-  50% {
-    transform: rotate(-45deg) scale(1.2);
-  }
-  100% {
-    transform: rotate(-45deg) scale(1);
-  }
+  0%   { transform: rotate(-45deg) scale(1); }
+  50%  { transform: rotate(-45deg) scale(1.2); }
+  100% { transform: rotate(-45deg) scale(1); }
 }
-
 /* Nestajanje cele animacije */
 @keyframes fadeOut {
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
+  to { opacity: 0; visibility: hidden; }
 }
